@@ -1,20 +1,23 @@
-= Java Shopping Cart DDD Demonstration
+= Java Shopping Cart - Using DDD Application Architecture
 
 == Introduction
 This project stems from a coding challenge.
+
+The application was built upon *Domain Driven Design* application architecture principles, as well as trying to be sure that *invalid state remains unrepresentable*.
+If you are not familiar with the latter concept, I urge you to search for it and type driven design for more information.
 
 === Ambiguities in the Requirements
 Real world implementation would mean discussing requirements and getting resolution that way. I have made choices that I feel were in keeping with the overall requirements of this test, but may or may not be acceptable in a production application - possibly acceptable in a POC or MVP, however.
 
 . The statement "You should be able to specify how many of each product is being added to the cart, and provide a means to observe the resulting state." is the most ambiguous, in my opinion. It does not state how the resulting state should be observed. Providing methods to get total counts and counts by product seemed the most straight-forward.
 . There is no requirement specified for not found conditions or other exceptions when retrieving data. I resolved this by returning an empty Optional.
-. There is no requirement specified for the quantity of any specific product, nor for total product quantity. I ignored this for the purpose of this exercise. This could have serious consequences in a production application.
-. There is no requirement specified for the total number of different products that can be added to the cart. I ignored this for the purpose of this exercise. This could have serious consequences in a production application.
+. There is no requirement specified for the quantity of any specific product, nor for total product quantity. I ignored this for the purpose of this exercise. _This could have serious consequences in a production application where both should be limited valid amounts_.
+. There is no requirement specified for the total number of different products that can be added to the cart. I ignored this for the purpose of this exercise. _This could have serious consequences in a production application where both should be limited valid amounts_.
 . There is no requirement specified for the max price (nor min) of any specific product. I ignored this for the purpose of this exercise, though do not allow negative pricing.
-. There is no requirement of the handling of removing more of an item than is currently in cart. I felt setting the value to 0, which then caused it to be removed, was acceptable.
-. You called out that the code should speak for itself, that comments should not be necessary to explain the code. I agree with that, and have tried to practice that for years. The only real exception to that would be Javadoc (or similar in other languages). Documenting the public API is handy for developers who wish to use it. For the purpose of this exercise, however, I felt that was not something upon which I would be judged. Too, some teams adamantly forego such documentation. I do understand the reasons why that may be a choice as well.
+. There is no requirement of the handling of removing more of an item than is currently in the cart. I felt setting the value to 0, which then caused it to be removed, was acceptable.
+. It is called out that the code should speak for itself, that comments should not be necessary to explain the code. I agree with that, and have tried to practice that for years. The only real exception to that would be Javadoc (or similar in other languages). Documenting the public API is handy for developers who wish to use it. For the purpose of this exercise, however, I felt that was not something upon which I would be judged. Too, some teams adamantly forego such documentation. I do understand the reasons why that may be a choice as well.
 
-I feel that covers most of the assumptions made.
+There are likely other assumptions made as well, though I think trivial.
 
 === TODOs
 There are a few TODOs in the code.
