@@ -106,6 +106,14 @@ gradle-app.setting
 *.hprof
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,gradle
+
+# Ignore Gradle build output directory
+build
+/coverage/
+/.idea/
+
+
+# Ignore files for now. May restore.
 /lib/apiguardian-api-1.1.2.jar
 /lib/apiguardian-api-1.1.2-javadoc.jar
 /lib/apiguardian-api-1.1.2-sources.jar
