@@ -6,6 +6,9 @@ This project stems from a coding challenge.
 The application was built upon *Domain Driven Design* application architecture principles, as well as trying to be sure that *invalid state remains unrepresentable*.
 If you are not familiar with the latter concept, I urge you to search for it and type driven design for more information.
 
+Note that the `presentation` layer has no implementation. That was not a requirement, though it does leave the DDD structure incomplete. 
+One day, perhaps, in order to close that loop, I will expose REST endpoints or develop some other presentation.
+
 === Ambiguities in the Requirements
 Real world implementation would mean discussing requirements and getting resolution that way. I have made choices that I feel were in keeping with the overall requirements of this test, but may or may not be acceptable in a production application - possibly acceptable in a POC or MVP, however.
 
