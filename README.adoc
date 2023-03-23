@@ -110,3 +110,56 @@ The below is a sample with the correct values you can use to confirm your calcul
   Tax = 1.88
   Total = 16.90
 ```
+
+== Future Ideas
+=== Save item to wishlist
+- This implies a requirement for a Customer
+- Customer likely would be another service as is product:
+
+[source,ruby]
+----
+Customer {
+    First
+    Last
+    Address
+    City
+    State
+    Zip
+}
+----
+
+=== Save payment info, Payment service:
+[source,ruby]
+----
+PaymentMethod {
+    CardNumber
+    CVC
+    ExpirationDate
+    isDefault
+    CustomerId
+}
+----
+
+=== Call Checkout Service
+This would need the following:
+
+- Shipping address
+- Payment method
+- Cart contents
+
+To place an order:
+
+- call order service
+- add toJson to Cart
+
+=== Possible Cart Enhancements
+- Cart is missing canonical methods, though I don’t see how they would be needed.
+- Cart could use a method to expose all items as a list.
+- Expose totalProduct count, perhaps like:
+
+[source,ruby]
+----
+int count = valueList.stream()
+    .mapToInt(Item::quantity)
+    .sum();
+----
